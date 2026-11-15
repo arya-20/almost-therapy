@@ -312,3 +312,12 @@ h3 { font-size: var(--step-lead); line-height: 1.15; letter-spacing: -0.012em; }
 .anon-points li { background: var(--surface); border-radius: var(--r); padding: clamp(22px, 2.4vw, 32px); display: grid; gap: 8px; box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.07); }
 .anon-points p { color: var(--muted); max-width: 56ch; }
 @media (max-width: 900px) { .anon { grid-template-columns: 1fr; gap: 24px; } }
+/* Booking and business details */
+.book { margin-top: var(--gap); padding-inline: var(--m); }
+.book-card { background: var(--surface); border-radius: var(--r); padding: clamp(28px, 4vw, 56px); display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.07); }
+.book-card h2 { margin-bottom: 8px; }
+.book-card .lead { font-size: var(--step-body); color: var(--muted); }
+.biz { font-size: var(--step-small); color: var(--muted); line-height: 1.6; margin-top: 12px; }
+.biz strong { color: var(--ink); font-weight: 500; }
+.gbp { display: inline-block; margin-top: 10px; font-size: var(--step-small); color: var(--ink); }
+@media (max-width: 760px) { .book-card { flex-direction: column; align-items: stretch; } .book-card .btn { width: 100%; } }

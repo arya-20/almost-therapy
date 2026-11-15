@@ -1,5 +1,9 @@
 (() => {
   const EMAIL = 'almost.theraputic@gmail.com';
+// Paste your calendar booking link here (Calendly, Cal.com, etc.). Leave empty to email instead.
+const BOOKING_URL = '';
+// Paste your Google Business Profile link here.
+const GBP_URL = '';
 
   const mailto = (subject, body) =>
     `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
@@ -53,5 +57,17 @@
       copyBtn.textContent = EMAIL;
       status.textContent = 'Copy failed. The address is ' + EMAIL;
     }
+  });
+})();
+
+// Booking and Google links: use the real URLs when set, otherwise fall back safely.
+(() => {
+  document.querySelectorAll('[data-book]').forEach((a) => {
+    if (BOOKING_URL) { a.href = BOOKING_URL; a.target = '_blank'; a.rel = 'noopener'; }
+    else { a.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent('First call booking') + '&body=' + encodeURIComponent('Hello,\n\nI would like to book a first 30-minute call.\n'); }
+  });
+  document.querySelectorAll('[data-gbp]').forEach((a) => {
+    if (GBP_URL) { a.href = GBP_URL; a.target = '_blank'; a.rel = 'noopener'; }
+    else { a.hidden = true; }
   });
 })();
