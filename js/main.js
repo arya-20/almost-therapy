@@ -1,5 +1,5 @@
 (() => {
-  const EMAIL = 'almost.theraputic@gmail.com';
+  const EMAIL = 'almosttherapyy@gmail.com';
 
   const mailto = (subject, body) =>
     `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
