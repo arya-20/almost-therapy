@@ -2,6 +2,8 @@
   const EMAIL = 'almost.theraputic@gmail.com';
 // Paste your calendar booking link here (Calendly, Cal.com, etc.). Leave empty to email instead.
 const BOOKING_URL = '';
+// Times on offer. Change these to the real ones.
+const SLOTS = ['10:00', '13:00', '17:00', '19:00'];
 // Paste your Google Business Profile link here.
 const GBP_URL = '';
 
@@ -60,14 +62,43 @@ const GBP_URL = '';
   });
 })();
 
-// Booking and Google links: use the real URLs when set, otherwise fall back safely.
+// Booking picker: next 14 days (Mon-Sat) and set times. Writes the chosen slot into an email.
 (() => {
-  document.querySelectorAll('[data-book]').forEach((a) => {
-    if (BOOKING_URL) { a.href = BOOKING_URL; a.target = '_blank'; a.rel = 'noopener'; }
-    else { a.href = 'mailto:' + EMAIL + '?subject=' + encodeURIComponent('First call booking') + '&body=' + encodeURIComponent('Hello,\n\nI would like to book a first 30-minute call.\n'); }
-  });
-  document.querySelectorAll('[data-gbp]').forEach((a) => {
-    if (GBP_URL) { a.href = GBP_URL; a.target = '_blank'; a.rel = 'noopener'; }
-    else { a.hidden = true; }
-  });
+  const EMAIL = 'almost.theraputic@gmail.com';
+  const BOOKING_URL = '';
+  const SLOTS = ['10:00', '13:00', '17:00', '19:00'];
+  const mailto = (subject, body) => "mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}";
+  const days = document.getElementById('days'), times = document.getElementById('times'), send = document.getElementById('send-request');
+  if (!days) return;
+  let day = null, time = null;
+  const fmtDay = (d) => d.toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' });
+  const chip = (label, group, onPick) => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'chip'; b.textContent = label; b.setAttribute('aria-pressed', 'false');
+    b.addEventListener('click', () => {
+      group.querySelectorAll('.chip').forEach((c) => c.setAttribute('aria-pressed', 'false'));
+      b.setAttribute('aria-pressed', 'true'); onPick(); update();
+    });
+    group.append(b);
+  };
+  const today = new Date();
+  for (let i = 1, n = 0; n < 12; i++) {
+    const d = new Date(today.getFullYear(), today.getMonth(), today.getDate() + i);
+    if (d.getDay() === 0) continue;
+    n++;
+    chip(fmtDay(d), days, () => { day = fmtDay(d); });
+  }
+  SLOTS.forEach((t) => chip(t, times, () => { time = t; }));
+  const update = () => {
+    if (day && time) {
+      send.removeAttribute('aria-disabled');
+      send.textContent = `Request ${day} at ${time}`;
+      send.href = BOOKING_URL || mailto('First call request', `Hello,\n\nI would like to book a first 30-minute call.\n\nPreferred time: ${day} at ${time}\n\nThank you.`);
+      if (BOOKING_URL) { send.target = '_blank'; send.rel = 'noopener'; }
+    } else {
+      send.setAttribute('aria-disabled', 'true'); send.removeAttribute('href');
+      send.textContent = 'Choose a day and time';
+    }
+  };
+  send.addEventListener('click', (e) => { if (send.getAttribute('aria-disabled') === 'true') e.preventDefault(); });
 })();

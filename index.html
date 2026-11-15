@@ -25,7 +25,7 @@
 <a class="skip" href="#main">Skip to content</a>
 
 <header class="top glass">
-  <a class="wordmark" href="#top" aria-label="Almost Therapy, home">Almost Therapy</a>
+  <a class="wordmark" href="#top" aria-label="Almost Therapy, home"><img src="assets/logo.svg" width="28" height="28" alt="" aria-hidden="true">Almost Therapy</a>
   <nav aria-label="Main">
     <a class="nl" href="#about">About</a>
     <a class="nl" href="#reviews">Reviews</a>
@@ -66,14 +66,23 @@
 </section>
 
 <!-- BOOKING -->
-<!-- TODO: paste your calendar booking link into BOOKING_URL in js/main.js (e.g. Calendly or Cal.com). Until then the button emails instead. -->
+<!-- TODO: time slots below are examples. Set the real ones in SLOTS in js/main.js. -->
 <section class="book" id="book" aria-labelledby="book-h">
   <div class="book-card" data-reveal>
-    <div>
+    <div class="book-head">
       <h2 id="book-h">Book your first call.</h2>
-      <p class="lead">30 minutes, £20 (£12 for students). Pick a time that suits you.</p>
+      <p class="lead">30 minutes, £20 (£12 for students). Pick a day and time, then send the request. We confirm by email.</p>
     </div>
-    <a class="btn" data-book href="#contact">Choose a time</a>
+    <fieldset class="slot-group">
+      <legend>1. Choose a day</legend>
+      <div class="chips" id="days"></div>
+    </fieldset>
+    <fieldset class="slot-group">
+      <legend>2. Choose a time</legend>
+      <div class="chips" id="times"></div>
+    </fieldset>
+    <a class="btn btn-wide" id="send-request" aria-disabled="true">Choose a day and time</a>
+    <p class="muted-small">Requests are not confirmed until you hear back by email.</p>
   </div>
 </section>
 <!-- ANONYMITY -->

@@ -321,3 +321,18 @@ h3 { font-size: var(--step-lead); line-height: 1.15; letter-spacing: -0.012em; }
 .biz strong { color: var(--ink); font-weight: 500; }
 .gbp { display: inline-block; margin-top: 10px; font-size: var(--step-small); color: var(--ink); }
 @media (max-width: 760px) { .book-card { flex-direction: column; align-items: stretch; } .book-card .btn { width: 100%; } }
+/* Logo and booking picker */
+.wordmark { display: inline-flex; align-items: center; gap: 10px; }
+.wordmark img { width: 28px; height: 28px; }
+.book-card { display: grid; gap: 28px; }
+.book-card .btn { justify-self: start; }
+.book-card .btn-wide { min-width: 280px; }
+.slot-group { border: 0; padding: 0; margin: 0; display: grid; gap: 12px; }
+.slot-group legend { font-size: var(--step-small); color: var(--muted); margin-bottom: 10px; padding: 0; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font: inherit; font-size: var(--step-small); padding: 10px 16px; border-radius: 999px; border: 0; background: var(--surface-3); color: var(--ink); cursor: pointer; transition: background-color 160ms ease, color 160ms ease, transform 160ms var(--ease-out); }
+.chip:active { transform: scale(0.97); }
+.chip[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); font-weight: 500; }
+.chip:focus-visible { outline: 3px solid var(--accent-strong); outline-offset: 2px; }
+#send-request[aria-disabled="true"] { background: var(--surface-3); color: var(--muted); pointer-events: none; }
+@media (max-width: 760px) { .book-card .btn-wide { min-width: 0; width: 100%; } }
