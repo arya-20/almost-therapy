@@ -9,7 +9,7 @@
     if (a.dataset.mail === 'hero' || a.dataset.mail === 'price') {
       a.href = mailto(
         'First call enquiry',
-        'Hello Nithyha,\n\nI would like to book a first 30-minute call.\n\nThank you,\n'
+        'Hello,\n\nI would like to book a first 30-minute call.\n\nThank you,\n'
       );
     }
   });
@@ -33,7 +33,7 @@
     const name = (d.get('name') || '').toString().trim();
     const why = (d.get('why') || '').toString().trim();
     const times = (d.get('times') || '').toString().trim();
-    const lines = ['Hello Nithyha,', '', 'I would like to book a first 30-minute call.'];
+    const lines = ['Hello,', '', 'I would like to book a first 30-minute call.'];
     if (d.get('student')) lines.push('', 'I am a student and can show valid student ID, so I would like the 40% student discount.');
     if (why) lines.push('', `What brings me here: ${why}`);
     if (times) lines.push('', `Times that suit me: ${times}`);

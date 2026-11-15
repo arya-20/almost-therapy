@@ -1,4 +1,4 @@
-/* Nithyha Saravana: one-to-one talking therapy.
+/* Almost Therapy: one-to-one talking therapy.
    A calm night world: dusk navy, soft apricot, foggy photographs, liquid-glass panes. */
 
 :root {
@@ -304,3 +304,11 @@ h3 { font-size: var(--step-lead); line-height: 1.15; letter-spacing: -0.012em; }
   .foot-links { grid-template-columns: repeat(2, auto); }
   .foot-last { flex-wrap: wrap; align-items: center; }
 }
+
+/* Anonymity section */
+.anon { margin-top: var(--gap); padding-inline: var(--m); display: grid; grid-template-columns: 5fr 7fr; gap: clamp(32px, 5vw, 80px); align-items: start; }
+.anon-lead { margin-top: 20px; max-width: 34ch; font-size: var(--step-lead); line-height: 1.4; color: var(--muted); }
+.anon-points { display: grid; gap: 12px; }
+.anon-points li { background: var(--surface); border-radius: var(--r); padding: clamp(22px, 2.4vw, 32px); display: grid; gap: 8px; box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.07); }
+.anon-points p { color: var(--muted); max-width: 56ch; }
+@media (max-width: 900px) { .anon { grid-template-columns: 1fr; gap: 24px; } }

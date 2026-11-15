@@ -12,33 +12,33 @@ Plain static HTML/CSS/JS, no build step, hosted on GitHub Pages (user brief).
 
 ## Users
 
-Adults in the UK considering talking therapy for the first time or after a gap, usually on a phone, often late in the evening, often anxious about reaching out. Job: decide whether Nithyha feels safe and credible, then take one small low-risk step (email for a first consultation).
+Adults in the UK considering talking therapy for the first time or after a gap, usually on a phone, often late in the evening, often anxious about reaching out. Job: decide whether the therapist feels safe and credible, then take one small low-risk step (email for a first consultation).
 
 ## Product Purpose
 
-A start-up storefront for a new one-to-one talking therapy practice run by Nithyha Saravana. Success is a visitor emailing nithyha09@gmail.com to book a first consultation.
+A start-up storefront for a new one-to-one talking therapy practice run by an anonymous therapist. Success is a visitor emailing almost.theraputic@gmail.com to book a first consultation.
 
 ## Positioning
 
-One named practitioner, a low-cost way in (first consultation £20), and a clinical background that began in a hospital setting in Bangalore, India.
+One anonymous practitioner, a low-cost way in (first consultation £20), and a clinical background that began in a hospital setting.
 
 ## Capabilities and Constraints
 
 - First consultation: £20. No other prices are confirmed; do not invent any.
-- Contact is email only (nithyha09@gmail.com) via mailto links; no backend or booking system.
+- Contact is email only (almost.theraputic@gmail.com) via mailto links; no backend or booking system.
 - Therapy offered: general talking therapy. No named modality.
-- Open decisions (inferred, to confirm with Nithyha): session length, delivery (online or in person), session price after the first consultation, exact BSc and MSc subjects, professional registration or membership, location, availability.
+- Open decisions (inferred, to confirm with the therapist): session length, delivery (online or in person), session price after the first consultation, exact BSc and MSc subjects, professional registration or membership, location, availability.
 - Not an emergency service; must signpost UK urgent help.
 
 ## Brand Commitments
 
-Name used on the site: Nithyha Saravana. Tone: warm, calm. Visual direction is dark (user brief).
+Brand on the site: Almost Therapy. The therapist is deliberately anonymous (they/them). Tone: warm, calm. Visual direction is dark (user brief).
 
 ## Evidence on Hand
 
-- Prior therapy experience in a hospital in Bangalore, India.
+- Prior therapy experience in a hospital setting.
 - A relevant BSc and a relevant MSc (subjects unconfirmed).
-- Absent and must not be fabricated: testimonials, client numbers, registrations, photographs of her, years of experience.
+- Absent and must not be fabricated: testimonials, client numbers, registrations, photographs of the therapist, years of experience.
 
 ## Product Principles
 
